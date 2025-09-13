@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Hind Siliguri", serif;
+    font-size: 16px;
+}
+i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    all: unset;
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.container {
+    margin: 100px 0;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: aliceblue;
+    border-radius: 10px;
+}
+.container h1 {
+    text-align: center;
+}
+.container .add-task {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid darkcyan;
+    border-radius: 100px;
+}
+.container .add-task input {
+    all: unset;
+    padding: 5px 10px;
+    height: 100%;
+    flex: 1;
+}
+.container .add-task .add-button {
+    background: darkcyan;
+}
+.container .task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+.container .task-list li .delete {
+    margin-left: auto;
+    background: red;
+    cursor: pointer;
+}
+.container .task-list li .completed {
+    text-decoration: line-through;
+    color: gray;
+}

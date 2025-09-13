@@ -27,10 +27,10 @@ class TaskDetailViewSet(APIView):
                 "error" : "Task not found."
             })
         
-    def put(self, request, pk):
+    def patch(self, request, pk):
         try:
             task = models.Task.objects.get(pk = pk, is_active = True)
-            serializer = serializers.TaskSerializer(task, data = request.data)
+            serializer = serializers.TaskSerializer(task, data = request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
