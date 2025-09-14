@@ -6,7 +6,9 @@ function App() {
     const [newTask, setNewTask] = useState("");
 
     const getTask = async () => {
-        const response = await axios.get("http://localhost:8000/api/tasks/");
+        const response = await axios.get(
+            "https://todo-using-drf-and-react.onrender.com//api/tasks/"
+        );
         setTasks(response.data);
     };
     useEffect(() => {
@@ -18,16 +20,19 @@ function App() {
     };
 
     const addTask = async () => {
-        const response = await axios.post("http://localhost:8000/api/tasks/", {
-            title: newTask,
-        });
+        const response = await axios.post(
+            "https://todo-using-drf-and-react.onrender.com//api/tasks/",
+            {
+                title: newTask,
+            }
+        );
         setTasks([...tasks, response.data]);
         setNewTask("");
     };
 
     const completeTask = async (id, currentStatus) => {
         const response = await axios.patch(
-            `http://localhost:8000/api/tasks/${id}`,
+            `https://todo-using-drf-and-react.onrender.com//api/tasks/${id}`,
             {
                 is_complete: !currentStatus,
             }
@@ -40,7 +45,9 @@ function App() {
     };
 
     const deleteTask = async (id) => {
-        await axios.delete(`http://localhost:8000/api/tasks/${id}`);
+        await axios.delete(
+            `https://todo-using-drf-and-react.onrender.com//api/tasks/${id}`
+        );
         setTasks(tasks.filter((task) => task.id !== id));
     };
 
